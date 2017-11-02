@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cssSelector</title>
+	<style>
+	div{
+		border: 1px solid #000;
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+	}
+	</style>
+	<script type="text/javascript"
+	src="js/jquery-2.2.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("div").css("height","100px")
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>盒子1</div>
+	<button>按钮</button>
+
+</body>
+</html>

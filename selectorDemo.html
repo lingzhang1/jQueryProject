@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>selectorDemo</title>
+	<style>
+
+	</style>
+	<script src="js/jquery-2.2.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("ul").click(function(){
+				$(this).children(".list").css("backgroundColor","red");
+			});
+			$("li").click(function(){
+				$(this).parent().css("border","3px solid #000");	
+			});	
+			$("li").click(function(){
+				$(this).siblings().css("font","20px '微软雅黑'");	
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul>父盒子
+		<li class="list">li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+	<ul>父盒子
+		<li class="list">li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+	<ul>父盒子
+		<li class="list">li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+</body>
+</html>

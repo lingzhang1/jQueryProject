@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menueBar</title>
+	<style>
+		*{ padding: 0; margin:0; border:0 none; }
+		.bigbox{ width: 500px; margin: 200px auto;}
+		.bigbox>div{
+			float: left;
+			margin:0 3px;
+			position: relative;
+		}
+		.menue{
+			width: 120px;
+			height: 40px;
+			background-color: #ffc;
+			border: 1px solid #ccc;
+			text-align: center;
+
+		}
+		a{
+			text-decoration: none;
+			color: #333;
+			
+		}
+		div>a{
+			color: purple;
+			font:20px "微软雅黑";
+			line-height: 40px;
+
+		}
+		li{
+			list-style: none;
+			border: 1px solid #ccc;
+		}
+		ul{
+			text-align: center;
+			border: 1px solid #ccc;
+			background-color: yellow;
+			
+		}
+		.inner{
+			padding-top: 3px;
+			display: none;
+			position: absolute;  /*//解决IE6的兼容性问题*/
+			width: 100px;
+			left: 10px;
+		}
+	</style>
+	<script src="js/jquery-2.2.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".menue").parent().mouseover(function(){
+				$(this).children(".inner").stop().slideDown(300);
+			});
+			$(".menue").parent().mouseout(function(){
+				$(this).children(".inner").stop().slideUp(100);
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div  class="bigbox">
+		<div>
+			<div class="menue">
+				<a href="#">一级菜单</a>
+			</div>
+			<div class="inner">
+				<ul >
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">三级菜单</a></li>
+					<li><a href="#">四级菜单</a></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<div class="menue">
+				<a href="#">一级菜单</a>
+			</div>
+			<div class="inner">
+				<ul >
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">三级菜单</a></li>
+					<li><a href="#">四级菜单</a></li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<div class="menue">
+				<a href="#">一级菜单</a>
+			</div>
+			<div class="inner">
+				<ul >
+					<li><a href="#">二级菜单</a></li>
+					<li><a href="#">三级菜单</a></li>
+					<li><a href="#">四级菜单</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

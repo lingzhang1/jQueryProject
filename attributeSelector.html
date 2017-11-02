@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>attributeSelector</title>
+	<style>
+	.box{
+		width: 200px; height: 200px; background-color: red;
+	}
+	</style>
+	<script src="js/jquery-2.2.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("div").click(function(){
+				$("li").attr("class","box")
+			});
+		});
+	</script>
+</head>
+<body>
+	<div> 盒子</div>
+	<ul>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+	</ul>
+	<ul>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+		<li>这是一个li</li>
+	</ul>
+</body>
+</html>

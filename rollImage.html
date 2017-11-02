@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rollImage</title>
+	<style>
+	*{ margin: 0; padding:0; text-align: center; list-style: none; border: 0; }
+	.box{
+		width: 385px;
+		height: 197px;
+		margin: 0 auto;
+		overflow: hidden;
+		margin-top: 200px;
+		position: relative;
+	}
+	ol li{
+		width: 12px;
+		height: 12px;
+		background-color: grey;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 12px;
+		border: 1px solid #000;
+		margin-right:7px;
+		margin-top: 3px; 
+		float: left;
+	}
+	.first{
+		width: 15px;
+		height: 15px;
+		font-size: 12px;
+		line-height: 15px;
+		color: #f60;
+		border: 1px solid #f60;
+		margin-top: 0px;  /*图形放大后，底部与缩小图形齐平*/
+		cursor:pointer;   /*鼠标形状为小手*/
+	}
+	ol{
+		width: 130px;
+		height: 20px;
+		position:absolute;
+		bottom: 4px;
+		right:4px; 
+		z-index: 300;
+	}
+	ul{ position: relative; }
+	ul li{
+		
+		position: absolute; 
+		left:0; top: 0; /*画面从左边划出效果，所以绝对定位*/
+	}
+
+	</style>
+	<script src="js/jquery-2.2.2.js"></script>
+	<script>
+		$(document).ready(function(){
+			var num2=7; 
+			$("ol li").mouseover(function(){
+				$(this).attr("class","first");
+				$(this).siblings().attr("class",""); // 删除first类
+				var num=$(this).index(); //获取当前激活元素的序列号。
+				$("ul li").eq(num).css("left","385px");
+				num2++;
+				$("ul li").eq(num).css("z-index",num2);
+				$("ul li").eq(num).animate({left:"0"},100);
+				//动态css,产生过渡,可以控制动画时间
+			});
+		});
+	</script>	
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="../img/1.jpg" width="385px" height="197px"></li>
+			<li><img src="../img/2.jpg" width="385px" height="197px"></li>
+			<li><img src="../img/3.jpg" width="385px" height="197px"></li>
+			<li><img src="../img/4.jpg" width="385px" height="197px"></li>
+			<li><img src="../img/5.png"></li>
+			<li><img src="../img/6.jpg"></li>
+		</ul>
+		<ol>
+			<li><div>1</div></li>
+			<li><div>2</div></li>
+			<li><div>3</div></li>
+			<li><div>4</div></li>
+			<li><div>5</div></li>
+			<li class="first"><div>6</div></li>
+		</ol>
+	</div>
+</body>
+</html>
